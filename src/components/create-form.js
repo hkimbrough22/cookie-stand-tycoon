@@ -1,3 +1,8 @@
+import React from 'react';
+import TextInput from '@leafygreen-ui/text-input';
+import Card from '@leafygreen-ui/card';
+import '../App.css'
+
 export default function CreateForm({ onCreate }) {
 
     function submitHandler(event) {
@@ -10,17 +15,27 @@ export default function CreateForm({ onCreate }) {
         event.target.reset();
     }
     return (
+    <Card 
+    className="card-styles" 
+    as="article"
+    darkMode='true'
+    >
         <form onSubmit={submitHandler}>
 
             <legend>Create Cookie Stand</legend>
 
             <div>
-                <label htmlFor="location">Location</label>
-                <input type="text" name="location" />
+            <TextInput
+                htmlFor="location"
+                name="location"
+                label="Location"
+                description="Enter the location for the new shop below"
+                placeholder="Montreal"
+                />
             </div>
 
-            <div>
-
+            <div id="inputDiv">
+                
                 <fieldset>
                     <label htmlFor="min-customers">Minimum Customers per Hour</label>
                     <input type="number" name="min-customers" />
@@ -35,9 +50,10 @@ export default function CreateForm({ onCreate }) {
                     <label htmlFor="avg-cookies">Average Cookies per Sale</label>
                     <input type="number" name="avg-cookies" step=".1" />
                 </fieldset>
-                <button type="submit">Create</button>
+                <button type="submit">Add a Shop</button>
             </div>
 
         </form>
+    </Card>
     )
 }
