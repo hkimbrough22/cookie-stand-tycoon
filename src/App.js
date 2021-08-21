@@ -4,6 +4,7 @@ import CreateForm from './components/create-form'
 import ReportTable from './components/report-table'
 import Footer from './components/footer'
 import { hours } from './data'
+import './App'
 
 class App extends Component {
 
